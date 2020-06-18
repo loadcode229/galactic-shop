@@ -1,1 +1,7 @@
-"HELLO WORLD"
+<a href="/lightsabers/new">Create a New Lightsaber:</a><br>
+
+<br>
+
+<% @lightsabers.each do |lightsaber| %>
+    <a href="/lightsabers/<%=lightsaber.id%>"><%=lightsaber.color%><%=lightsaber.saber_style%><%=lightsaber.saber_handle%></a>
+<% end %>

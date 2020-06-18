@@ -7,10 +7,19 @@
 
     <div class="container">
       <h1>Welcome to the Galactic Shop!</h1>
-      <h2>Get your credits ready!</h2>
+      <h2>Get your droids, sabers, and all your anti-imperical needs!</h2>
     </div>
 
   <%=yield%>
   
+  <br><br>
+
+  <% if logged_in? %>
+      <form action="/logout" method="POST">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Logout">
+      </form>
+    <% end %>
+
   </body>
 </html>

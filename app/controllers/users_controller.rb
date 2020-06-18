@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
-        @user = User.new(username: params[:username], password: params[:password])
+        @user = User.new(username: params[:username], email: params[:email], password: params[:password])
         if @user.save
             #successful signup
             session[:user_id] = @user.id
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
         else
             #unsuccessful login
             @error = "Wrong Holocode!"
-            redirect "/users/login"
+            redirect "/login"
         end 
     end
 
