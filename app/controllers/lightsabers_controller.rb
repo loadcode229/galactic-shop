@@ -26,7 +26,7 @@ class LightsabersController < ApplicationController
     get '/lightsabers/:id/edit' do
         @lightsaber = Lightsaber.find_by(params[:id])
         authorize(@lightsaber)
-        erb :'/lightsabers/edit'
+        erb :'/lightsabers/edit_lightsaber'
     end
 
     patch '/lightsabers/:id' do
