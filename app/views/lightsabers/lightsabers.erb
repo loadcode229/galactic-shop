@@ -4,6 +4,6 @@
 
 <% @lightsabers.each do |lightsaber| %>
     <% if lightsaber.user == current_user %>
-        <a href="/lightsabers/<%=lightsaber.id%>"><%=lightsaber.name%></a>
+        <a href="/lightsabers/<%=lightsaber.id%>"><%=lightsaber.name%></a><br><br>
     <% end %>
 <% end %>

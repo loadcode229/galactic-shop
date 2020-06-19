@@ -18,8 +18,8 @@ class LightsabersController < ApplicationController
     end 
 
     get '/lightsabers/:id' do
+        authenticate
         @lightsaber = Lightsaber.find_by(params[:id])
-        authorize(@lightsaber)
         erb :'/lightsabers/show_lightsaber'
     end
 
@@ -30,10 +30,11 @@ class LightsabersController < ApplicationController
     end
 
     patch '/lightsabers/:id' do
-        @lightsaber = Lightsaber.find(params[:id])
+        @lightsaber = Lightsaber.find_by(params[:id])
         authorize(@lightsaber)
         @lightsaber.update(color: params[:color], saber_style: params[:saber_style], saber_handle: params[:saber_handle])
-        erb :'/lightsabers'
+        redirect "/lightsabers"
+        
     end
 
     delete '/lightsabers/:id/delete' do
