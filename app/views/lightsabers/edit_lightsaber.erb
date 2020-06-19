@@ -1,6 +1,11 @@
 
 <form action="/lightsabers/<%=@lightsaber.id%>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="patch">
+    Lightsaber Name:
+    <input type="text" name="name" value="<%=@lightsaber.name%>"><br>
+
+    <br>
+
     Color:
     <input type="text" name="color" value="<%=@lightsaber.color%>"><br>
 

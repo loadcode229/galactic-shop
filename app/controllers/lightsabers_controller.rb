@@ -13,7 +13,7 @@ class LightsabersController < ApplicationController
 
     post '/lightsabers' do
         authenticate
-        Lightsaber.create(color: params[:color], saber_style: params[:saber_style], saber_handle: params[:saber_handle], user: current_user)
+        Lightsaber.create(name: params[:name], user: current_user)
         redirect "/lightsabers"
     end 
 
