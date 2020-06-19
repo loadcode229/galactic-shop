@@ -3,5 +3,7 @@
 <br>
 
 <% @lightsabers.each do |lightsaber| %>
-    <a href="/lightsabers/<%=lightsaber.id%>"><%=lightsaber.color%><%=lightsaber.saber_style%><%=lightsaber.saber_handle%></a>
+    <% if lightsaber.user == current_user %>
+        <a href="/lightsabers/<%=lightsaber.id%>"><%=lightsaber.color%><%=lightsaber.saber_style%><%=lightsaber.saber_handle%></a>
+    <% end %>
 <% end %>

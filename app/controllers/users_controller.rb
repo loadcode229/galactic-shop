@@ -29,7 +29,7 @@ class UsersController < ApplicationController
         else
             #unsuccessful login
             @error = "Wrong Holocode!"
-            redirect "/login"
+            erb :'users/login'
         end 
     end
 
