@@ -1,0 +1,21 @@
+=> [[32m#<Lightsaber:0x00007fffd8e8e3f8[0m
+  id: [1;34m1[0m,
+  name: [31m[1;31m"[0m[31mSky[1;31m"[0m[31m[0m,
+  color: [31m[1;31m"[0m[31mBlue[1;31m"[0m[31m[0m,
+  saber_style: [31m[1;31m"[0m[31mOne Blade[1;31m"[0m[31m[0m,
+  saber_handle: [31m[1;31m"[0m[31mCurved[1;31m"[0m[31m[0m,
+  user_id: [1;34m1[0m[32m>[0m,
+ [32m#<Lightsaber:0x00007fffd8f1e9f8[0m
+  id: [1;34m2[0m,
+  name: [1;36mnil[0m,
+  color: [31m[1;31m"[0m[31mBlue[1;31m"[0m[31m[0m,
+  saber_style: [31m[1;31m"[0m[31mOne Blade[1;31m"[0m[31m[0m,
+  saber_handle: [31m[1;31m"[0m[31mCurved[1;31m"[0m[31m[0m,
+  user_id: [1;34m1[0m[32m>[0m,
+ [32m#<Lightsaber:0x00007fffd8f1e840[0m
+  id: [1;34m3[0m,
+  name: [31m[1;31m"[0m[31mSky[1;31m"[0m[31m[0m,
+  color: [1;36mnil[0m,
+  saber_style: [1;36mnil[0m,
+  saber_handle: [1;36mnil[0m,
+  user_id: [1;34m1[0m[32m>[0m]

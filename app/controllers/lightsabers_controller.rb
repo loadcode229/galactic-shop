@@ -13,18 +13,18 @@ class LightsabersController < ApplicationController
 
     post '/lightsabers' do
         authenticate
-        Lightsaber.create(name: params[:name], user: current_user)
+        Lightsaber.create(name: params[:name], color: params[:color], saber_style: params[:saber_style], saber_handle: params[:saber_handle], user: current_user)
         redirect "/lightsabers"
     end 
 
     get '/lightsabers/:id' do
         authenticate
-        @lightsaber = Lightsaber.find_by(params[:id])
+        @lightsaber = Lightsaber.find_by(id: params[:id])
         erb :'/lightsabers/show_lightsaber'
     end
 
     get '/lightsabers/:id/edit' do
-        @lightsaber = Lightsaber.find_by(params[:id])
+        @lightsaber = Lightsaber.find_by(id: params[:id])
         authorize(@lightsaber)
         erb :'/lightsabers/edit_lightsaber'
     end
@@ -32,9 +32,11 @@ class LightsabersController < ApplicationController
     patch '/lightsabers/:id' do
         @lightsaber = Lightsaber.find_by(params[:id])
         authorize(@lightsaber)
-        @lightsaber.update(color: params[:color], saber_style: params[:saber_style], saber_handle: params[:saber_handle])
-        redirect "/lightsabers"
-        
+        if @lightsaber.update(name: params[:name], color: params[:color], saber_style: params[:saber_style], saber_handle: params[:saber_handle])
+            redirect "/lightsabers"
+        else
+            redirect "/lightsabers/#{@lightsaber.id}/edit"
+        end
     end
 
     delete '/lightsabers/:id/delete' do
