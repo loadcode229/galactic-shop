@@ -4,6 +4,7 @@ class ApplicationController < Sinatra::Base
 
     set :views, ->{ File.join(root, "../views") }
     enable :sessions
+    set :public_folder, 'public'
     set :session_secret, "password_security"
 
     get '/' do

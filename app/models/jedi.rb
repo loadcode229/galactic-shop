@@ -1,3 +1,3 @@
-class Lightsaber < ActiveRecord::Base
+class Jedi < ActiveRecord::Base
     belongs_to :user
 end
