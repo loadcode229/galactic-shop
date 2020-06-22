@@ -1,4 +1,4 @@
-<%= @lightsabers.each do |lightsaber| %>
+<% @lightsabers.each do |lightsaber| %>
     <%= lightsaber.name %>
     <%= lightsaber.color %>
     <%= lightsaber.saber_style %>
@@ -6,8 +6,9 @@
 <% end %>
 
 
-<%= @droids.each do |droid| %>
+<% @droids.each do |droid| %>
     <%= droid.name %>
     <%= droid.colors %>
     <%= droid.droid_model %>
 <% end %>
+

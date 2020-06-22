@@ -24,9 +24,10 @@ class ApplicationController < Sinatra::Base
             redirect "/login" if !logged_in?
         end
 
-        def authorize(lightsaber)
+        def authorize(lightsaber, droid)
             authenticate
             redirect "/lightsabers" if lightsaber.user != current_user
+            redirect "/droids" if droid.user != current_user
         end
     end
 end

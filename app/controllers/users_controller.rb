@@ -10,6 +10,7 @@ class UsersController < ApplicationController
             #successful signup
             session[:user_id] = @user.id
             redirect "/lightsabers"
+            redirect "/droids"
         else
             #unsuccessful signup
             redirect "/users/signup"
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
             #successful login
             session[:user_id] = @user.id
             redirect "/lightsabers"
+            redirect "/droids"
         else
             #unsuccessful login
             @error = "Wrong Holocode!"
