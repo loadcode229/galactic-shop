@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_013112) do
+ActiveRecord::Schema.define(version: 2020_06_22_220835) do
+
+  create_table "droids", force: :cascade do |t|
+    t.string "name"
+    t.string "colors"
+    t.string "droid_model"
+    t.integer "user_id"
+  end
 
   create_table "lightsabers", force: :cascade do |t|
     t.string "name"

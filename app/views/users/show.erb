@@ -4,3 +4,10 @@
     <%= lightsaber.saber_style %>
     <%= lightsaber.saber_handle %>
 <% end %>
+
+
+<%= @droids.each do |droid| %>
+    <%= droid.name %>
+    <%= droid.colors %>
+    <%= droid.droid_model %>
+<% end %>
