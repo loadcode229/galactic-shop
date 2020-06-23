@@ -8,6 +8,7 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "password_security"
 
     get '/' do
+        @jedis = Jedi.all
         erb :index
     end
 

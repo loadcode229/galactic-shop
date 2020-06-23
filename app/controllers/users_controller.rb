@@ -9,8 +9,7 @@ class UsersController < ApplicationController
         if @user.save
             #successful signup
             session[:user_id] = @user.id
-            redirect "/lightsabers"
-            redirect "/droids"
+            redirect "/users/#{@user.id}"
         else
             #unsuccessful signup
             redirect "/users/signup"
@@ -26,8 +25,7 @@ class UsersController < ApplicationController
         if @user && @user.authenticate(params[:password])
             #successful login
             session[:user_id] = @user.id
-            redirect "/lightsabers"
-            redirect "/droids"
+            redirect "/"
         else
             #unsuccessful login
             @error = "Wrong Holocode!"
@@ -35,8 +33,8 @@ class UsersController < ApplicationController
         end 
     end
 
-    delete '/logout' do
+    get '/logout' do
         session.clear
-        redirect "/login"
+        redirect "/"
     end
 end

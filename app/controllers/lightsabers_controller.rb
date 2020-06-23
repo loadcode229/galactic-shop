@@ -1,4 +1,4 @@
-class JedisController < ApplicationController
+class LightsabersController < ApplicationController
 
     get '/lightsabers' do
         authenticate

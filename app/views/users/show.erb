@@ -1,14 +1,32 @@
-<% @lightsabers.each do |lightsaber| %>
-    <%= lightsaber.name %>
-    <%= lightsaber.color %>
-    <%= lightsaber.saber_style %>
-    <%= lightsaber.saber_handle %>
-<% end %>
+<div class="user">
+    <h1>Your Account:</h1>
+    <p>Username: <%= @user.username %></p>
+    <p>Email: <%= @user.email %></p>
+    <p><a href="/users<%=@user.id%>/edit">Edit your account</a></p>
 
+    <h2>Your Jedi:</h2>
+    <% @jedis.each do |jedi| %>
+        <%= jedi.name %>
+        <%= jedi.race %>
+        <%= jedi.home_planet %>
+    <% end %>
+    <p><a href="/jedis/new">Add a Jedi:</a></p>
 
-<% @droids.each do |droid| %>
-    <%= droid.name %>
-    <%= droid.colors %>
-    <%= droid.droid_model %>
-<% end %>
+    <h2>Your Lightsabers:</h2>
+    <% @lightsabers.each do |lightsaber| %>
+        <%= lightsaber.name %>
+        <%= lightsaber.color %>
+        <%= lightsaber.saber_style %>
+        <%= lightsaber.saber_handle %>
+    <% end %>
+    <p><a href="/lightsabers/new">Add a Lightsaber:</a></p>
+
+    <h2>Your Droids:</h2>
+    <% @droids.each do |droid| %>
+        <%= droid.name %>
+        <%= droid.colors %>
+        <%= droid.droid_model %>
+    <% end %>
+    <p><a href="/droids/new">Add a droid:</a></p>
+</div>
 
