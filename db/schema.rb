@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_06_22_234256) do
 
-  create_table "droids", force: :cascade do |t|
-    t.string "name"
-    t.string "colors"
-    t.string "droid_model"
-    t.integer "user_id"
-  end
-
   create_table "jedis", force: :cascade do |t|
     t.string "name"
     t.string "race"

@@ -1,9 +1,0 @@
-<a href="/droids/new">Create a New Droid:</a><br>
-
-<br>
-
-<% @droids.each do |droid| %>
-    <% if droid.user == current_user %>
-        <a href="/droids/<%=droid.id%>"><%=droid.name%></a><br><br>
-    <% end %>
-<% end %>

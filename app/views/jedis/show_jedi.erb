@@ -1,0 +1,9 @@
+<li><%= @jedi.name %></li>
+<li><%= @jedi.race %></li>
+<li><%= @jedi.home_planet %></li>
+<form action="/jedis/<%=@jedi.id%>/delete" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Jedi">
+</form>
+<a href="/jedis/<%=@jedi.id%>/edit">Edit Jedi</a>
+

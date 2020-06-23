@@ -4,11 +4,10 @@ class ApplicationController < Sinatra::Base
 
     set :views, ->{ File.join(root, "../views") }
     enable :sessions
-    set :public_folder, 'public'
+    #set :public_folder, 'public'
     set :session_secret, "password_security"
 
     get '/' do
-        @jedis = Jedi.all
         erb :index
     end
 
@@ -26,10 +25,29 @@ class ApplicationController < Sinatra::Base
             redirect "/login" if !logged_in?
         end
 
-        def authorize(lightsaber, droid)
+        def authorize(jedi)
             authenticate
-            redirect "/lightsabers" if lightsaber.user != current_user
-            redirect "/droids" if droid.user != current_user
+            redirect "/jedis" if jedi.user != current_user
         end
     end
+
+    # not_found do 
+    #     status 404
+    #     erb :not_found, layout: false
+    # end
+    
+    # error AuthenticationError do 
+    #     status 403
+    #     erb :not_authenticated, layout: false
+    # end
+    
+    # error AuthorizationError do 
+    #     status 403
+    #     erb :not_authorized, layout: false
+    # end
+    
+    # error ActiveRecord::RecordNotFound do 
+    #     status 404
+    #     erb :not_found, layout: false
+    # end
 end
