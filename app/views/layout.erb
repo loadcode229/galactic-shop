@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="/stylesheets/main.css">
     <title>Jedi Temple</title>
   </head>
-  <body>
-    <div class="container">
-      <h1>Welcome to the Jedi Temple!</h1>
-      <h2>Create Jedis with their own lightsaber!</h2>
-    </div>
 
+  <body>
+
+    <%= render_navbar %>
+
+    <h1>Welcome to the Jedi Temple!</h1>
+    
     <%= yield %>
 
     <% if logged_in? %>

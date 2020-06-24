@@ -39,10 +39,10 @@ class ApplicationController < Sinatra::Base
         end
     end
 
-    # not_found do 
-    #     status 404
-    #     erb :not_found, layout: false
-    # end
+    not_found do 
+        status 404
+        erb :not_found, layout: false
+    end
     
     # error AuthenticationError do 
     #     status 403
@@ -54,8 +54,8 @@ class ApplicationController < Sinatra::Base
     #     erb :not_authorized, layout: false
     # end
     
-    # error ActiveRecord::RecordNotFound do 
-    #     status 404
-    #     erb :not_found, layout: false
-    # end
+    error ActiveRecord::RecordNotFound do 
+        status 404
+        erb :not_found, layout: false
+    end
 end
