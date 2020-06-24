@@ -29,6 +29,14 @@ class ApplicationController < Sinatra::Base
             authenticate
             redirect "/jedis" if jedi.user != current_user
         end
+
+        def render_navbar
+            if logged_in?
+                erb :logged_in_navbar
+            else
+                erb :logged_out_navbar
+            end
+        end
     end
 
     # not_found do 
