@@ -1,19 +1,19 @@
-<div class="user">
-    <h1>Your Account:</h1>
-    <p>Username: <%= @user.username %></p>
-    <p>Email: <%= @user.email %></p>
-    <p><a href="/users<%=@user.id%>/edit">Edit your account</a></p>
 
-    <h2>Your Jedi:</h2>
-    <% @jedis.each do |jedi| %>
-        <%= jedi.name %>
-    <% end %>
-    <p><a href="/jedis/new">Add a Jedi:</a></p>
+<h1>Your Account:</h1>
+<p>Username: <%= @user.username %></p>
+<p>Email: <%= @user.email %></p>
+<p><a href="/users<%=@user.id%>/edit">Edit your account</a></p>
 
-    <h2>Your Lightsabers:</h2>
-    <% @lightsabers.each do |lightsaber| %>
-        <%= lightsaber.name %>
-    <% end %>
-    <p><a href="/lightsabers/new">Add a Lightsaber:</a></p>
-</div>
+<h2>Your Jedi:</h2>
+<% @jedis.each do |jedi| %>
+    <%= jedi.name %>
+<% end %>
+<p><a href="/jedis/new">Add a Jedi:</a></p>
+
+<h2>Your Lightsabers:</h2>
+<% @lightsabers.each do |lightsaber| %>
+    <%= lightsaber.name %>
+<% end %>
+<p><a href="/lightsabers/new">Add a Lightsaber:</a></p>
+
 

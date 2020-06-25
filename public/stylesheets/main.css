@@ -18,30 +18,25 @@
 
 .navbar {
     height: 100%;
-    width: 11%;
+    width: 10%;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #DAA520;
+    background-color: #228B22;
     overflow-x: hidden;
 }
 
 .navbar-button {
     border: none;
-    background-color: #800000;
+    background-color: #708090;
     font-family: 'system-ui', cursive;
     font-size: 12px;
     padding-left: 2px;
 }
 
-.navbar-button:hover{
-    color: red;
-    cursor: pointer;
-}
-
 .navbar a {
-    color: #800000;
+    color: #708090;
     padding: 16px;
     text-decoration: none;
     display: block;
@@ -63,6 +58,18 @@ h1 {
     font-size: 36px;
     line-height: 52px;
     text-align: center;
+}
+
+h2 {
+    border-bottom: 2px solid #708090;
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 36px;
 }
 
 p {

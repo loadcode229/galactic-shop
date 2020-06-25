@@ -1,9 +1,10 @@
-<a href="/jedis/new">Create Jedi</a>
+<a href="/jedis/new">Create Jedi</a><br><br>
 
-<ul>
+<li>
     <% @jedis.each do |jedi| %>
-        <li><a href="/jedis/<%=jedi.id%>">
-            <%=jedi.name%></a>
-        </li>
+        <a href="/jedis/<%=jedi.id%>">
+            <%=jedi.name%>
+        </a>
     <% end %>
-</ul>
+</li>
+<br><br>

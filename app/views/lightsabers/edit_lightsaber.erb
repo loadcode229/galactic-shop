@@ -1,0 +1,19 @@
+<form action="/lightsabers/<%=@lightsaber.id%>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    Name:
+    <input type="text" name="name" value="<%= @lightsaber.name %>"><br>
+
+    Color:
+    <input type="text" name="color" value="<%= @lightsaber.color %>"><br>
+
+    Saber Type:
+    <input type="text" name="saber_type" value="<%= @lightsaber.saber_type %>"><br>
+
+    Saber Handle:
+    <input type="text" name="saber_handle" value="<%= @lightsaber.saber_handle %>">
+</form>
+
+<form action="/lightsabers/<%=@lightsaber.id%>" method="POST">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Lightsaber">
+</form>
