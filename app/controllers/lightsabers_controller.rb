@@ -2,7 +2,7 @@ class LightsabersController < ApplicationController
 
     get '/lightsabers' do
         authenticate
-        @lightsabers = Lightsaber.all
+        @lightsabers = current_user.lightsabers
         erb :'/lightsabers/lightsabers'
     end
 
@@ -13,7 +13,7 @@ class LightsabersController < ApplicationController
 
     post '/lightsabers' do
         authenticate
-        Lightsaber.create(name: params[:name], color: params[:color], saber_style: params[:saber_style], saber_handle: params[:saber_handle], user: current_user)
+        Lightsaber.create(name: params[:name], color: params[:color], saber_type: params[:saber_type], saber_handle: params[:saber_handle], user: current_user)
         redirect "/lightsabers"
     end 
 
@@ -32,7 +32,7 @@ class LightsabersController < ApplicationController
     patch '/lightsabers/:id' do
         @lightsaber = Lightsaber.find_by(params[:id])
         authorize(@lightsaber)
-        if @lightsaber.update(name: params[:name], color: params[:color], saber_style: params[:saber_style], saber_handle: params[:saber_handle])
+        if @lightsaber.update(name: params[:name], color: params[:color], saber_type: params[:saber_type], saber_handle: params[:saber_handle])
             redirect "/lightsabers"
         else
             redirect "/lightsabers/#{@lightsaber.id}/edit"

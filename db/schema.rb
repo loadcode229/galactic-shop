@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_234256) do
   end
 
   create_table "lightsabers", force: :cascade do |t|
+    t.string "name"
     t.string "color"
     t.string "saber_type"
     t.string "saber_handle"

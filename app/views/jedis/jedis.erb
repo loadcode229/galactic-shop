@@ -2,7 +2,8 @@
 
 <ul>
     <% @jedis.each do |jedi| %>
-        <li><a href="/jedis/<%=jedi.id%>"><%=jedi.name%></a></li>
+        <li><a href="/jedis/<%=jedi.id%>">
+            <%=jedi.name%></a>
         </li>
     <% end %>
 </ul>

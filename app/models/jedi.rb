@@ -1,7 +1,7 @@
 class Jedi < ActiveRecord::Base
-    has_many :lightsabers
     belongs_to :user
-    validates :name, :user, presence: true
+
+    validates :name, presence: true
     validates :name, uniqueness: true
 
     def slug

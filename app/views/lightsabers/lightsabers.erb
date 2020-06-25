@@ -1,3 +1,9 @@
-<% @lightsaber.each |lightsaber| %>
-    <%= lightsaber.name
-<% end %>
+<a href="/lightsabers/new">Create Lightsaber</a>
+
+<ul>
+    <% @lightsabers.each do |lightsaber| %>
+        <a href="/lightsabers/<%=lightsaber.id%>">
+            <li><%=lightsaber.name%></li>
+        </a>
+    <% end %>
+</ul>
