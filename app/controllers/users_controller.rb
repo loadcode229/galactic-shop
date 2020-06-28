@@ -1,5 +1,30 @@
 class UsersController < ApplicationController
 
+    get '/show' do
+        authenticate
+        @user = current_user
+        erb :'/users/show'
+    end
+
+    get '/users/:id' do
+        @user = User.find_by(id: params[:id])
+        authorize_user(@user)
+        erb :'/users/show'
+    end
+
+    get '/users/:id/edit' do
+        @user = User.find_by(id: params[:id])
+        authorize_user(@user)
+        erb :'/users/edit'
+    end
+
+    patch '/users/:id' do
+        @user = User.find_by(params[:id])
+        authorize_user(@user)
+        @user.update(username: params[:username], email: params[:email], password: params[:password])
+        redirect "/show"
+    end
+
     get '/signup' do
         erb :'users/create_user'
     end
@@ -22,10 +47,10 @@ class UsersController < ApplicationController
 
     post '/login' do
         @user = User.find_by(username: params[:username])
-        if @user && @user.authenticate(params[:password])
+        if @user && @user.authenticate(params[:password])   #other authenticate - note
             #successful login
             session[:user_id] = @user.id
-            redirect "/jedis"
+            redirect "/show"
         else
             #unsuccessful login
             @error = "Wrong Holocode!"

@@ -1,19 +1,9 @@
+<h1>Welcome, <%= @user.username %>!</h1>
 
-<h1>Your Account:</h1>
-<p>Username: <%= @user.username %></p>
-<p>Email: <%= @user.email %></p>
-<p><a href="/users<%=@user.id%>/edit">Edit your account</a></p>
+<a href="/users/<%=@user.id%>/edit">Edit your account</a>
 
-<h2>Your Jedi:</h2>
-<% @jedis.each do |jedi| %>
-    <%= jedi.name %>
-<% end %>
-<p><a href="/jedis/new">Add a Jedi:</a></p>
+<h2><a href="/jedis">Look at your Jedis</a></h2>
 
-<h2>Your Lightsabers:</h2>
-<% @lightsabers.each do |lightsaber| %>
-    <%= lightsaber.name %>
-<% end %>
-<p><a href="/lightsabers/new">Add a Lightsaber:</a></p>
+<h2><a href="/lightsabers">Look at your Lightsabers</a></h2>
 
 

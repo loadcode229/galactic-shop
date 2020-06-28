@@ -30,7 +30,7 @@ class LightsabersController < ApplicationController
     end
 
     patch '/lightsabers/:id' do
-        @lightsaber = Lightsaber.find_by(params[:id])
+        @lightsaber = Lightsaber.find_by(id: params[:id])
         authorize(@lightsaber)
         if @lightsaber.update(name: params[:name], color: params[:color], saber_type: params[:saber_type], saber_handle: params[:saber_handle])
             redirect "/lightsabers"
